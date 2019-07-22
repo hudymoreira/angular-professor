@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.a {
+    
+    font-size: 115px;
+    text-align: center;
+    font-weight: 900;
+  }
+  .lista{
+      height: 494px;
+      overflow-x: hidden;
+  }
+  .guche{
+    height: 494px;
+    overflow: hidden;
+}
+.listaPaciente{
+    height: 250px;
+    overflow-x: hidden;
+}

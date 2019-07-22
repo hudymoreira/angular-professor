@@ -1,0 +1,154 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="assets/img/background2.jpg" alt="..."/>
+                    </div>
+                    <div class="author" (click)="proximo()">
+                        <img class="avatar border-white" src="assets/img/ticket.png" alt="..."/>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <select [(ngModel)]="resumo.meuGuiche" >
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    
+                                </select>
+
+                                <h5><small>Meu guiche</small></h5>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>{{resumo.senhaAtual}}<br /><small>Senha atual</small></h5>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>{{resumo.totalCadastrado}}<br /><small>Total Cad.</small></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Pacientes Cadastrados</h4>
+                    </div>
+                    <div class="content listaPaciente">
+                        <ul class="list-unstyled team-members">
+                            <li *ngFor="let paciente of pacientes">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <div class="avatar">
+                                            <img src="assets/img/faces/face-1.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6"> {{paciente.nome}} <br />
+                                    </div>
+                                    <div class="col-xs-3 text-right">
+                                        <button class="btn btn-sm btn-success btn-icon" (click)="carregaPaciente(paciente)"><i class=" ti-search"></i></button>
+                                    </div>
+                                </div>
+                            </li>                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Cadastro de Pacientes</h4>
+                    </div>
+                    <div class="content">
+                        
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Empresa</label>
+                                        <input type="text" class="form-control border-input" disabled placeholder="Company" value="Campo Bloqueado">
+                                    </div>
+                                </div>
+                           
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control border-input" placeholder="Email" [(ngModel)]="paciente.email">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input type="text" class="form-control border-input" placeholder="Digite o nome aqui" [(ngModel)]="paciente.nome">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Sobrenome</label>
+                                        <input type="text" class="form-control border-input" placeholder="Digite o sobrenome aqui" [(ngModel)]="paciente.snome" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Endereço</label>
+                                        <input type="text" class="form-control border-input" placeholder="Digite o endereço aqui" [(ngModel)]="paciente.endereco" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Cidade</label>
+                                        <input type="text" class="form-control border-input" placeholder="Dicite a cidade aqui" [(ngModel)]="paciente.cidade" >
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Estado</label>
+                                        <input type="text" class="form-control border-input" placeholder="Estado" [(ngModel)]="paciente.estado" >
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>CEP</label>
+                                        <input type="text" class="form-control border-input" placeholder="CEP" [(ngModel)]="paciente.cep">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Observações</label>
+                                        <textarea rows="5" class="form-control border-input" placeholder="Campo apara observações"[(ngModel)]="paciente.obs" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="text-center">
+                                        <button  class="btn btn-info btn-fill btn-wd" (click)="cadastrar()">Salvar</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="text-center">
+                                        <button class="btn  btn-fill btn-wd" (click)="cancelar()">cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
